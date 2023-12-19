@@ -12,6 +12,14 @@
 
 #include "libft.h"
 
+/*
+	Alloue (avec malloc()) et retourne une chaîne de
+	caractères issue de la chaîne ’s’.
+	Cette nouvelle chaîne commence à l’index ’start’ et
+	a pour taille maximale ’len’
+*/
+
+
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char		*new_string;

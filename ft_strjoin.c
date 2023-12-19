@@ -16,15 +16,20 @@ static char	*ft_fill_join(char *str, char const *s1, char const *s2)
 {
 	size_t	i;
 	size_t	j;
+	size_t	len_s1;
+	size_t	len_s2;
 
 	i = 0;
 	j = 0;
-	while (i < ft_strlen(s1))
+	len_s1 = ft_strlen(s1);
+	len_s2 = ft_strlen(s2);
+
+	while (i < len_s1)
 	{
 		str[i] = s1[i];
 		i++;
 	}
-	while (j < ft_strlen(s2))
+	while (j < len_s2)
 	{
 		str[i + j] = s2[j];
 		j++;
@@ -44,11 +49,5 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	str = malloc(sizeof(char) * (len_total + 1));
 	if (!str)
 		return (NULL);
-	if (!s1 && !s2)
-		return ("");
-	if (s1 && !s2)
-		return ((char *)s1);
-	if (!s1 && s2)
-		return ((char *)s2);
 	return (ft_fill_join(str, s1, s2));
 }
